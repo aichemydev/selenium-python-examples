@@ -14,11 +14,10 @@ logging.basicConfig(
 )
 
 ############# Import env variables ############
-
-TW_EMAIL, TW_PASS = os.getenv('TW_EMAIL'), os.getenv('TW_PASS')
-if not TW_EMAIL or not TW_PASS:
-    logger.error('Twitter email and/or password environment variables could not be imported.')
-    raise Exception
+		
+FB_EMAIL, FB_PASS = os.getenv('FB_EMAIL'), os.getenv('FB_PASS')	
+if not FB_EMAIL or not FB_PASS:	
+    raise Exception('Facebook email and/or password environment variables could not be imported.')
 
 #################### TEST CONSTANTS ####################
 
