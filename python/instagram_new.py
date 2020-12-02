@@ -13,6 +13,13 @@ logging.basicConfig(
     datefmt='%y%m%d %H:%M:%S',
 )
 
+############# Import env variables ############
+
+INST_EMAIL, INST_PASS = os.getenv('INST_EMAIL'), os.getenv('INST_PASS')
+if not INST_EMAIL or not INST_PASS:
+    logger.error('Instagram email and/or password environment variables could not be imported.')
+    raise Exception
+
 #################### TEST CONSTANTS ####################
 
 
@@ -38,10 +45,6 @@ def login(driver, timeout_sec):
     """This logs into the Instagram and returns the driver in the new
         state.
         """
-    INST_EMAIL = "testgoldqa@gmail.com"  #input('Enter Email:')
-    INST_PASS = "testgold1234"  #input('Enter Password:')
-
-    time.sleep(timeout_sec)
 
     logger.info("[TEST] finding the login email box and filling it in")
     email_box = driver.find_element_by_xpath(LOGIN_EMAIL_XPATH)

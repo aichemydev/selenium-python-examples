@@ -13,6 +13,14 @@ logging.basicConfig(
     datefmt='%y%m%d %H:%M:%S',
 )
 
+############# Import env variables ############
+
+TW_EMAIL, TW_PASS = os.getenv('TW_EMAIL'), os.getenv('TW_PASS')
+if not TW_EMAIL or not TW_PASS:
+    logger.error('Twitter email and/or password environment variables could not be imported.')
+    raise Exception
+
+
 #################### TEST CONSTANTS ####################
 
 
@@ -35,10 +43,6 @@ def login(driver, timeout_sec):
     """This logs into the Twitter and returns the driver in the new
         state.
         """
-    TW_EMAIL = "testgoldqa@gmail.com"  # input('Enter Email:')
-    TW_PASS = "testgold1234"  # input('Enter Password:')
-
-    time.sleep(timeout_sec)
 
     logger.info("[TEST] finding the login button")
     login_button = driver.find_element_by_xpath(LOGIN_BUTTON)
