@@ -33,9 +33,9 @@ LOGIN_SUBMIT_BUTTON ="//div[@role='button']"
 
 MESSAGES_XPATH = "//span[contains(text(),'Messages')]"
 
-HEADER_DROPDOWN_BUTTON = "//header/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]"
-LOGOUT_BUTTON_XPATH = "//body/div[@id='react-root']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/a[2]/div[1]/div[1]"
-LOGOUT_SUBMIT_BUTTON_XPATH = "//body/div[@id='react-root']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]"
+HEADER_DROPDOWN_BUTTON = "//div[@role='button' and @data-testid='SideNav_AccountSwitcher_Button']"
+LOGOUT_BUTTON_XPATH = "//a[@href='/logout']"
+LOGOUT_SUBMIT_BUTTON_XPATH = "//span[contains(string(.), 'Log out')]"
 
 
 def login(driver, timeout_sec):
@@ -48,7 +48,6 @@ def login(driver, timeout_sec):
     login_button = driver.find_element_by_xpath(LOGIN_BUTTON)
 
     login_button.click()
-    time.sleep(timeout_sec)
     logger.info("[TEST] finding the login email box and filling it in")
     #email_box = driver.find_element_by_name("session[username_or_email]")
     email_box = driver.find_element_by_xpath(LOGIN_EMAIL_XPATH)
@@ -75,7 +74,7 @@ def view_messages(driver, timeout_sec):
     time.sleep(timeout_sec)
     logger.info("[TEST] finding messages button")
 
-    messages_button = driver.find_element_by_xpath("//a[@href='/messages']")
+    messages_button = driver.find_element_by_xpath("//a[contains(text(),'Messages')]") #("//a[@href='/messages']")
     logger.info("[TEST] clicking messages button")
     messages_button.click()
 
@@ -123,7 +122,7 @@ def run_test(timeout_sec):
 
     try:
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")
+        #options.add_argument("--headless")
         options.add_argument("--disable-extensions")
         # Pass the argument 1 to allow and 2 to block
         options.add_experimental_option("prefs", {
@@ -174,4 +173,3 @@ def run_test(timeout_sec):
 
 if __name__ == "__main__":
     run_test(2.0)
-
