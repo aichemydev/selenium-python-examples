@@ -29,8 +29,8 @@ LANDING_PAGE_URL = "https://www.twitter.com/"
 LOGIN_EMAIL_XPATH = "//input[@name='session[username_or_email]']"
 LOGIN_PASSWORD_XPATH = "//input[@name='session[password]']"
 
-LOGIN_BUTTON = "//button[contains(text(),'Log In')]"
-LOGIN_SUBMIT_BUTTON = "//body/div[@id='react-root']/div[1]/div[1]/div[2]/main[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]"
+LOGIN_BUTTON = "//a[contains(string(.), 'Log in')]"
+LOGIN_SUBMIT_BUTTON ="//div[@role='button']"
 
 MESSAGES_XPATH = "//a[contains(text(),'Messages')]"
 
@@ -44,13 +44,14 @@ def login(driver, timeout_sec):
         state.
         """
 
+    time.sleep(timeout_sec)
     logger.info("[TEST] finding the login button")
     login_button = driver.find_element_by_xpath(LOGIN_BUTTON)
+
     login_button.click()
     time.sleep(timeout_sec)
-
     logger.info("[TEST] finding the login email box and filling it in")
-    #email_box = driver.find_element_by_name("session[username_or_email]")
+    # email_box = driver.find_element_by_name("session[username_or_email]")
     email_box = driver.find_element_by_xpath(LOGIN_EMAIL_XPATH)
 
     # ########### breaking by changing a name attribute(fails to heal) ###########
@@ -75,11 +76,14 @@ def login(driver, timeout_sec):
     email_box.send_keys(TW_EMAIL)
 
     logger.info("[TEST] finding the login pass box and filling it in")
+    # pass_box = driver.find_element_by_name("session[password]")  # "session[password]"
     pass_box = driver.find_element_by_xpath(LOGIN_PASSWORD_XPATH)  # "session[password]"
     pass_box.send_keys(TW_PASS)
 
-    logger.info("[TEST] finding the login submit button")
+    time.sleep(timeout_sec)
+    logger.info("[TEST] finding the login button")
     login_submit = driver.find_element_by_xpath(LOGIN_SUBMIT_BUTTON)
+
     login_submit.click()
     time.sleep(timeout_sec)
 
@@ -235,3 +239,4 @@ def run_test(timeout_sec):
 
 if __name__ == "__main__":
     run_test(2.0)
+
