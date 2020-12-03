@@ -75,7 +75,7 @@ def view_messages(driver, timeout_sec):
     time.sleep(timeout_sec)
     logger.info("[TEST] finding messages button")
 
-    messages_button = driver.find_element_by_xpath(MESSAGES_XPATH)
+    messages_button = driver.find_element_by_xpath("//a[@href='/messages']")
     logger.info("[TEST] clicking messages button")
     messages_button.click()
 
