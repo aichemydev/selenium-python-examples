@@ -61,7 +61,7 @@ def login(driver, timeout_sec):
     return driver
 
 def view_profile(driver, timeout_sec):
-    """This shows  groups page info"""
+    """This shows profile page info"""
 
     time.sleep(timeout_sec)
     logger.info("[TEST] finding profile button")
@@ -70,23 +70,17 @@ def view_profile(driver, timeout_sec):
     profile_btn.click()
     time.sleep(timeout_sec)
 
-    logger.info("[TEST] finding edit_details button")
-    edit_details_btn = driver.find_element_by_xpath("//span/span[contains(text(),'Edit Details')]")    #"//div[@role='button' and @aria-label='Edit Details']")
-    logger.info("[TEST] clicking edit_details button")
-    edit_details_btn.click()
-    time.sleep(timeout_sec*1.5)
+    logger.info("[TEST] finding 'above' button")
+    above_btn = driver.find_element_by_xpath("//span[contains(text(),'About')]")    #"//a/div/span[contains(text(),'About')]")
+    logger.info("[TEST] clicking above_btn button")
+    above_btn.click()
+    time.sleep(timeout_sec * 1.5)
 
-    logger.info("[TEST] finding workplace_btn button")
-    workplace_btn = driver.find_element_by_xpath("//span[contains(text(),'Add a workplace')]")
-    logger.info("[TEST] clicking workplace_btn button")
-    workplace_btn.click()
-    time.sleep(timeout_sec*1.5)
-
-    logger.info("[TEST] finding overview_btn button")
-    overview_btn = driver.find_element_by_xpath("//a/span[contains(text(),'Overview')]")
-    logger.info("[TEST] clicking overview_btn button")
-    overview_btn.click()
-    time.sleep(timeout_sec*1.5)
+    logger.info("[TEST] finding places_btn button")
+    work_btn = driver.find_element_by_xpath("//a/span[contains(text(),'Work and Education')]")
+    logger.info("[TEST] clicking work_btn button")
+    work_btn.click()
+    time.sleep(timeout_sec * 1.5)
 
     logger.info("[TEST] finding places_btn button")
     places_btn = driver.find_element_by_xpath("//a/span[contains(text(),'Places Lived')]")
