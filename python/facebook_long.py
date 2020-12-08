@@ -68,12 +68,12 @@ def view_profile(driver, timeout_sec):
     profile_btn = driver.find_element_by_xpath("//body/div[@id='mount_0_0']/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[4]/a[1]")
     logger.info("[TEST] clicking profile_btn button")
     profile_btn.click()
-    time.sleep(timeout_sec)
+    time.sleep(timeout_sec * 1.5)
 
-    logger.info("[TEST] finding 'above' button")
-    above_btn = driver.find_element_by_xpath("//span[contains(text(),'About')]")    #"//a/div/span[contains(text(),'About')]")
-    logger.info("[TEST] clicking above_btn button")
-    above_btn.click()
+    logger.info("[TEST] finding 'about' button")
+    about_btn = driver.find_element_by_xpath("//a/div/span[contains(text(),'About')]")   #"//span[contains(text(),'About')]")  #
+    logger.info("[TEST] clicking about_btn button")
+    about_btn.click()
     time.sleep(timeout_sec * 1.5)
 
     logger.info("[TEST] finding places_btn button")
@@ -237,7 +237,7 @@ def run_test(timeout_sec):
         logger.info("[RUNNER] login done")
 
         # profile info
-        logger.info("[RUNNER] viewing groups info")
+        logger.info("[RUNNER] viewing profile info")
         view_profile(driver, timeout_sec)
 
         # groups info
