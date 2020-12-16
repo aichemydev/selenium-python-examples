@@ -26,7 +26,7 @@ if not FB_EMAIL or not FB_PASS:
 LANDING_PAGE_URL = "https://www.facebook.com/"
 LOGIN_EMAIL_XPATH = "//input[@id='email']"
 LOGIN_PASSWORD_XPATH = "//input[@id='pass']"
-LOGIN_SUBMIT_XPATH = "//button[@type='submit']"  #"//button[contains(text(),'Log In')]"
+LOGIN_SUBMIT_XPATH = "//button[@name='login']"  #"//button[contains(text(),'Log In')]"
 
 # GROUPS_XPATH="//body/div[@id='mount_0_0']/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/ul[1]/li[4]/span[1]/div[1]/a[1]"
 # GROUPS_XPATH = "//span[contains(text(),'Groups')]"  # newer design "//div[contains(text(),'Groups')]" # older design
