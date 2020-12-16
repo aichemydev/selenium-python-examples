@@ -26,7 +26,7 @@ if not FB_EMAIL or not FB_PASS:
 LANDING_PAGE_URL = "https://www.facebook.com/"
 LOGIN_EMAIL_XPATH = "//input[@id='email']"
 LOGIN_PASSWORD_XPATH = "//input[@id='pass']"
-LOGIN_SUBMIT_XPATH = "//button[contains(text(),'Log In')]"
+LOGIN_SUBMIT_XPATH = "//button[@type='submit']"  #"//button[contains(text(),'Log In')]"
 
 # GROUPS_XPATH="//body/div[@id='mount_0_0']/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/ul[1]/li[4]/span[1]/div[1]/a[1]"
 # GROUPS_XPATH = "//span[contains(text(),'Groups')]"  # newer design "//div[contains(text(),'Groups')]" # older design
@@ -63,9 +63,9 @@ def login(driver, timeout_sec):
 def view_profile(driver, timeout_sec):
     """This shows profile page info"""
 
-    time.sleep(timeout_sec)
+    time.sleep(timeout_sec * 1.5)
     logger.info("[TEST] finding profile button")
-    profile_btn = driver.find_element_by_xpath("//body/div[@id='mount_0_0']/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[4]/a[1]")
+    profile_btn = driver.find_element_by_xpath("//*[@id='mount_0_0']/div/div[1]/div[1]/div[2]/div[4]/div[1]/div[4]/a")  # "//*[@id='mount_0_0']/div/div[1]/div[1]/div[2]//a[starts-with(@href, '/profile')]")
     logger.info("[TEST] clicking profile_btn button")
     profile_btn.click()
     time.sleep(timeout_sec * 1.5)
@@ -76,7 +76,7 @@ def view_profile(driver, timeout_sec):
     about_btn.click()
     time.sleep(timeout_sec * 1.5)
 
-    logger.info("[TEST] finding places_btn button")
+    logger.info("[TEST] finding work_btn button")
     work_btn = driver.find_element_by_xpath("//a/span[contains(text(),'Work and Education')]")
     logger.info("[TEST] clicking work_btn button")
     work_btn.click()
