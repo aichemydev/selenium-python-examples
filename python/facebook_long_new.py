@@ -86,10 +86,10 @@ def login(driver, timeout_sec):
     logger.info(
         f"[TEST] Current outer HTML of the login_submit web element: {login_submit.get_attribute('outerHTML')}")
     time.sleep(timeout_sec)
-    driver.execute_script("arguments[0].removeAttribute(arguments[1])", login_submit, 'type')
+    driver.execute_script("arguments[0].removeAttribute(arguments[1])", login_submit, 'name')
     time.sleep(timeout_sec * 2)
     logger.info(
-       f"[TEST] Current outer HTML of the login_submit(type is gone): {login_submit.get_attribute('outerHTML')}")
+       f"[TEST] Current outer HTML of the login_submit(name is gone): {login_submit.get_attribute('outerHTML')}")
 
     logger.info("[TEST] finding and filling the pass_box after the modification")
     login_submit = driver.find_element_by_xpath(LOGIN_SUBMIT_XPATH)
