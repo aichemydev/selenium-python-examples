@@ -170,7 +170,8 @@ def view_profile(driver, timeout_sec):
     time.sleep(timeout_sec)
 
     # Commenting out delete education because we have one ellipse field where the aria-label='Options' does not work anymore
-    ellipsis_elem_list = driver.find_elements_by_xpath("//div[@aria-label='Options']")
+    logger.info("[TEST] finding ellipsis_elem ")
+    ellipsis_elem_list = driver.find_elements_by_xpath("//div[@class='buofh1pr']//div[@aria-label='Options']")  #"//div[@aria-label='Options']")
     logger.info("[TEST] clicking ellipsis_elem")
     for el in ellipsis_elem_list:
         el.click()
@@ -251,7 +252,7 @@ def view_profile(driver, timeout_sec):
     logger.info(
         f"[TEST] Current outer HTML of the tv_shows_btn button web element: {tv_shows_btn.get_attribute('outerHTML')}")
     time.sleep(timeout_sec)
-    new_text = "TV Shows and Series"
+    new_text = "TV programs"
     logger.info(f"[TEST] Changing text of the tv_shows_btn web element to: {new_text}")
     driver.execute_script("arguments[0].innerText = arguments[1]", tv_shows_btn, new_text)
     time.sleep(timeout_sec)
@@ -418,3 +419,4 @@ def run_test(timeout_sec):
 
 if __name__ == "__main__":
     run_test(2.0)
+
