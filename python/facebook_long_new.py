@@ -105,7 +105,7 @@ def view_profile(driver, timeout_sec):
 
     time.sleep(timeout_sec * 2)
     logger.info("[TEST] finding profile button")
-    profile_btn = driver.find_element_by_xpath("//*[@id='mount_0_0']//div[@class='buofh1pr']/ul/li/div/a")
+    profile_btn = driver.find_element_by_xpath("//*[@id='mount_0_0']//div[@class='buofh1pr']/ul/li/div/a[contains(@href, 'www.facebook.com')]")
     #"//*[@id='mount_0_0']/div/div[1]/div[1]/div[2]/div[4]/div[1]/div[4]/a")  # "//*[@id='mount_0_0']/div/div[1]/div[1]/div[2]//a[starts-with(@href, '/profile')]")
     logger.info("[TEST] clicking profile_btn button")
     profile_btn.click()
