@@ -72,7 +72,7 @@ def view_profile(driver, timeout_sec):
     time.sleep(timeout_sec * 1.5)
 
     logger.info("[TEST] finding 'about' button")
-    about_btn = driver.find_element_by_xpath("//a/div/span[contains(text(),'About')]")   #"//span[contains(text(),'About')]")  #
+    about_btn = driver.find_element_by_xpath("//div[@class='rq0escxv lpgh02oy du4w35lb rek2kq2y']//a/div/span[contains(text(),'About')]") #"//a/div/span[contains(text(),'About')]")
     logger.info("[TEST] clicking about_btn button")
     about_btn.click()
     time.sleep(timeout_sec * 1.5)
@@ -273,3 +273,4 @@ def run_test(timeout_sec):
 
 if __name__ == "__main__":
     run_test(2.0)
+
