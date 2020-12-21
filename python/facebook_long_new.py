@@ -174,9 +174,9 @@ def view_profile(driver, timeout_sec):
     logger.info("[TEST] clicking ellipsis_elem")
     for el in ellipsis_elem_list:
         el.click()
-        delete_field = driver.find_element_by_xpath(".//span[contains(text(),'Delete school')]")
+        delete_field = driver.find_element_by_xpath("//span[contains(text(),'Delete school')]")
         delete_field.click()
-        confirm_btn = driver.find_element_by_xpath(".//span[contains(text(),'Confirm')]")
+        confirm_btn = driver.find_element_by_xpath("//span[contains(text(),'Confirm')]")
         confirm_btn.click()
         time.sleep(timeout_sec * 1.5)
 
