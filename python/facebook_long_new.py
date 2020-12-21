@@ -242,7 +242,7 @@ def view_profile(driver, timeout_sec):
     time.sleep(timeout_sec * 1.5)
 
     logger.info("[TEST] finding tv_shows_btn button")
-    tv_shows_btn = driver.find_element_by_xpath("//div[@class='bp9cbjyn j83agx80 cbu4d94t d2edcug0']//a[contains(text(), 'TV Shows')]")
+    tv_shows_btn = driver.find_element_by_xpath("//div[@class='bp9cbjyn j83agx80 cbu4d94t d2edcug0']//a[@role='link' and contains(text(), 'TV Shows')]")
 
     ########### breaking by changing the xpath ###########
 
@@ -260,7 +260,7 @@ def view_profile(driver, timeout_sec):
 
     time.sleep(timeout_sec * 2)
     logger.info("[TEST] finding the tv_shows_btn after the modification")
-    tv_shows_btn = driver.find_element_by_xpath("//div[@class='bp9cbjyn j83agx80 cbu4d94t d2edcug0']//a[contains(text(),'TV Shows')]")
+    tv_shows_btn = driver.find_element_by_xpath("//div[@class='bp9cbjyn j83agx80 cbu4d94t d2edcug0']//a[@role='link' and contains(text(), 'TV Shows')]")
 
     ##########
     time.sleep(timeout_sec * 1.5)

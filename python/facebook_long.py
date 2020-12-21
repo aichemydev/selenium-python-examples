@@ -139,7 +139,7 @@ def view_profile(driver, timeout_sec):
     time.sleep(timeout_sec*1.5)
 
     logger.info("[TEST] finding tv_shows_btn button")
-    tv_shows_btn = driver.find_element_by_xpath("//div[@class='bp9cbjyn j83agx80 cbu4d94t d2edcug0']//a[contains(text(), 'TV Shows')]")
+    tv_shows_btn = driver.find_element_by_xpath("//div[@class='bp9cbjyn j83agx80 cbu4d94t d2edcug0']//a[@role='link' and contains(text(), 'TV Shows')]")
     logger.info("[TEST] clicking tv_shows_btn button")
     tv_shows_btn.click()
     time.sleep(timeout_sec*1.5)
@@ -273,4 +273,3 @@ def run_test(timeout_sec):
 
 if __name__ == "__main__":
     run_test(2.0)
-
