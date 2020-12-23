@@ -242,7 +242,7 @@ def run_test(timeout_sec):
 
     try:
         options = webdriver.ChromeOptions()
-        #options.add_argument("--headless")
+        options.add_argument("--headless")
         options.add_argument("--disable-extensions")
 
         driver = webdriver.Chrome(options=options)
