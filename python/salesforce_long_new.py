@@ -68,7 +68,7 @@ def login_to_salesforce(driver, timeout_sec):
 
     driver.get(contPgRecentlyViewedurl)
     time.sleep(2.0)
-    curr_url = driver.current_url
+    #curr_url = driver.current_url
 
     # click on the login button
     logger.info("[TEST] log into demodev")
@@ -94,9 +94,9 @@ def login_to_salesforce(driver, timeout_sec):
         assert (submit_btn.is_enabled())
 
     time.sleep(2.0)
-    curr_url = driver.current_url
     driver.get(contPgRecentlyViewedurl)
     time.sleep(2.0)
+    curr_url = driver.current_url
     logger.info(curr_url)
     assert (curr_url == contPgRecentlyViewedurl)
     logger.info("[TEST] We Successfully landed in the Contact list recent page : " + curr_url)
@@ -150,11 +150,11 @@ def login_to_salesforce(driver, timeout_sec):
         l_name.send_keys("Wilson")
     time.sleep(1.0)
 
-    logger.info("[TEST] Inputting account name")
-    a_name = driver.find_element_by_xpath(account_name)
-    if a_name.is_enabled():
-        a_name.send_keys("first_account")
-    time.sleep(1.0)
+    # logger.info("[TEST] Inputting account name")
+    # a_name = driver.find_element_by_xpath(account_name)
+    # if a_name.is_enabled():
+    #     a_name.send_keys("first_account")
+    # time.sleep(1.0)
 
     logger.info("[TEST] Inputting title")
     title = driver.find_element_by_xpath(title_path)
@@ -242,7 +242,7 @@ def run_test(timeout_sec):
 
     try:
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")
+        #options.add_argument("--headless")
         options.add_argument("--disable-extensions")
 
         driver = webdriver.Chrome(options=options)
@@ -270,3 +270,4 @@ def run_test(timeout_sec):
 
 if __name__ == "__main__":
     run_test(2.0)
+
