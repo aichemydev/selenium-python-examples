@@ -28,7 +28,7 @@ userNmTxtBx = "//input[@class='input r4 wide mb16 mt8 username']"
 passwdTxtBx = "//input[@class='input r4 wide mb16 mt8 password']"
 
 Userid = "sf@testgold.dev"
-Password = "admin123"
+Password = "VwtX9nbuZW3fvnC"
 
 loginBtn = "//input[@class='button r4 wide primary']"
 contactsButPath = "//span[.='Contacts']"
