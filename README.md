@@ -43,7 +43,7 @@ And now you're ready to run Python Selenium examples.
 
 - Open a `Command line` terminal by clicking on the "Start" button and typing in: `cmd` and hitting Enter.
 - Navigate to where you have stored these Python examples by using cd, for example: `cd ~/Github/selenium-python-examples`
-- Copy the value of TG_TOKEN on the [TestGold Installations page]((https://dev.k8s.testgold.dev/details/installation) and save it as an environment variable by pasting: `SET TG_TOKEN='your token goes here'
+- Copy the value of TG_TOKEN on the [TestGold Installations page](https://dev.k8s.testgold.dev/details/installation) and save it as an environment variable by pasting: `SET TG_TOKEN='your token goes here'
 - Set the following environment variable: `python name-of-test.py`
 
 
