@@ -2,7 +2,7 @@
 
 Selenium Python example tests
 
-The Test Gold Product allows you to submit a python selenium test script.
+The Wring Product allows you to submit a python selenium test script.
 
 It learns from an old selenium script run
 Make code changes to the site
@@ -24,7 +24,7 @@ You will need [Python 3.x.x ](https://www.python.org/downloads/) and pip package
 
 - Download Python on your machine.
 - Install pip package.
-- Download Python wheel in [Test Gold Interceptor packages.](https://dev.k8s.testgold.dev/details/installation)
+- Download Python wheel in [Wring Interceptor packages.](https://dev.wring.dev/details/installation)
 
 Install pip package
 
@@ -38,12 +38,12 @@ If that still doesn’t allow you to run `python -m pip`
 
 After downloading Python on your machine, you have to create a virtual environments. We recommend you this to create [virtual environments](https://packaging.python.org/en/latest/tutorials/installing-packages/#creating-virtual-environments).
 
-Download the Python wheel from [Test Gold Interceptor packages.](https://dev.k8s.testgold.dev/details/installation) and add it to the virtual environment you created for Python.
+Download the Python wheel from [Wring Interceptor packages.](https://dev.wring.dev/details/installation) and add it to the virtual environment you created for Python.
 And now you're ready to run Python Selenium examples.
 
 - Open a `Command line` terminal by clicking on the "Start" button and typing in: `cmd` and hitting Enter.
 - Navigate to where you have stored these Python examples by using cd, for example: `cd ~/Github/selenium-python-examples`
-- Copy the value of TG_TOKEN on the [TestGold Installations page](https://dev.k8s.testgold.dev/details/installation) and save it as an environment variable by pasting: `SET TG_TOKEN='your token goes here'
+- Copy the value of TG_TOKEN on the [Wring Installations page](https://dev.wring.dev/details/installation) and save it as an environment variable by pasting: `SET TG_TOKEN='your token goes here'
 - Set the following environment variable: `python name-of-test.py`
 
 
